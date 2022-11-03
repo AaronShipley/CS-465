@@ -1,5 +1,5 @@
 const travel = (req, res) => {
-    res.render('travel', {title: "Travlr Getaways - Travel"});
+    res.render('travel', {title: "Travlr Getaways "});
 };
 
 module.exports = {
