@@ -1,5 +1,5 @@
 const meals = (req, res) => {
-    res.render('index', {title: 'Meals'});
+    res.render('meals', {title: 'Meals'});
 };
 module.exports = {
     meals

@@ -1,5 +1,5 @@
 const rooms = (req, res) => {
-    res.render('index', {title: 'Rooms'});
+    res.render('rooms', {title: 'Rooms'});
 };
 module.exports = {
     rooms

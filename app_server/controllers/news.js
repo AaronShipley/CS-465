@@ -1,5 +1,5 @@
 const news = (req, res) => {
-    res.render('index', {title: 'News'});
+    res.render('news', {title: 'News'});
 };
 module.exports = {
     news
