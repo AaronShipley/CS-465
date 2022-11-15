@@ -1,13 +1,9 @@
-const fs = require('fs')
-const trips = JSON.parse(fs.readFileSync('./data/trips.json', 'utf-8'));
+const fs = require('fs');
+const trips = JSON.parse(fs.readFileSync('./data/trips.json','utf8'));
 
-
-// GET Travel View
 const travel = (req, res) => {
-    pageTitle = 'Travlr Getaways - Travel';
-    res.render('travel', {title: pageTitle, trips});
+    res.render('travel', {title: 'Travlr Getaways', trips});
 };
-
 module.exports = {
     travel
-}
+};
