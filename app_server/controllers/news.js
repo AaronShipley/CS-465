@@ -1,6 +1,11 @@
+const fs = require('fs')
+
 const news = (req, res) => {
-    res.render('news', {title: 'News'});
+    pageTitle = 'Travlr Getaways - News';
+    res.render('news', {title: pageTitle});
+
 };
+
 module.exports = {
     news
-};
+}
