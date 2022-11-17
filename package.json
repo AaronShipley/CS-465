@@ -17,12 +17,11 @@
     "express": "~4.16.1",
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
-    "mongoose": "^5.9.1",
-    "morgan": "~1.9.1",
-    "seedgoose": "^2.0.15"
+    "mongoose": "^5.13.15",
+    "morgan": "~1.9.1"
   },
   "devDependencies": {
     "hbs": "^4.2.0",
-    "seedgoose":"^2.0.2"
+    "seedgoose": "^2.0.2"
   }
 }
