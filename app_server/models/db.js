@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const host = process.env.DB_HOST ||'127.0.0.1'
 const dbURI = 'mongodb://${host}/travlr';
-const readLine = require('redline');
+const readLine = require('readline');
 const { db } = require('../../.seedgooserc');
 
 mongoose.set('useUnifiedTopology', true);
