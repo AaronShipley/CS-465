@@ -66,5 +66,5 @@ process.on('SIGTERM', () => {
 
 connect();
 
-mongoose.connect ();
+mongoose.connect();
 require('./travlr');
