@@ -1,42 +1,19 @@
 const mongoose = require('mongoose');
-const host = process.env.DB_HOST ||'127.0.0.1'
-const dbURI = `mongodb://${host}/travlr`;
-const readLine = require('readline');
-const { db } = require('../../.seedgooserc');
-
-mongoose.set('useUnifiedTopology', true);
-
-const connect = () => {
-  setTimeout(() => mongoose.connect(dbURI, {
-    useNewUrlParser: true,
-    useCreateIndex: true
-  }),1000);
-
+let dbURI = 'mongodb://localhost/travlr';
+if (process.env.NODE_ENV === 'production') {
+  dbURI = process.env.MONGODB_URI;
 }
+mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', () => {
-  console.log('connected');
+  console.log(`Mongoose connected to ${dbURI}`);
 });
 mongoose.connection.on('error', err => {
-  console.log('error:' + err);
-  return connect();
-
+  console.log('Mongoose connection error:', err);
 });
-
 mongoose.connection.on('disconnected', () => {
-  console.log('disconnected');
+  console.log('Mongoose disconnected');
 });
-
-if (process.platform === 'win32'){
-  const rl = readLine.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-  rl.on('SIGINT',() => {
-    process.emit("SIGINT");
-  })
-
-}
 
 const gracefulShutdown = (msg, callback) => {
   mongoose.connection.close( () => {
@@ -64,7 +41,4 @@ process.on('SIGTERM', () => {
   });
 });
 
-connect();
-
-mongoose.connect();
-require('./travlr');
+require('./models/travlr');

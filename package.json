@@ -2,23 +2,20 @@
   "name": "travlr",
   "version": "1.0.0",
   "description": "Travlr Getaways",
-  "author": "SNHU Neelima <neelima.patnaik@snhu.edu>",
+  "author": "Austin Little",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
-  },
-  "engines": {
-    "node": ">=11.0.0",
-    "npm": ">=6.4.0"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "hbs": "~4.0.4",
+    "hbs": "^4.2.0",
     "http-errors": "~1.6.3",
-    "mongoose": "^5.13.15",
-    "morgan": "~1.9.1"
+    "mongoose": "^5.9.2",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.19"
   },
   "devDependencies": {
     "hbs": "^4.2.0",

@@ -1,13 +1,12 @@
 const fs = require('fs');
-const { env } = require('process');
 const trips = JSON.parse(fs.readFileSync('./data/trips.json', 'utf8'));
 
-/*GET traveler view*/
+/* GET traveler view */
 const travel = (req, res) => {
-    pageTitle = process.env.npm_package_description + '- Travel';
+    pageTitle = process.env.npm_package_description + ' - Travel';
     res.render('travel', {title: pageTitle, trips});
 };
 
 module.exports = {
     travel
-} 
+}
