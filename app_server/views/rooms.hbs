@@ -18,12 +18,10 @@
 							<ul id="rooms">
 								{{#each beds}}
 								<li>
-									<a href="/rooms"><img src={{this.image}} alt="Img"></a>
-									<div class="infos">
-										<h2><a href="/rooms">{{this.name}}</a></h2>
-										{{{this.description}}}
-										{{{this.price}}}
-									</div>
+									<a href=“/rooms"><img src="images/{{this.image}}" alt="Img"></a>
+									<h2><a href=“/rooms">{{this.name}}</a></h2>
+									{{{this.description}}}
+									{{{this.price}}}
 								</li>
 								{{/each}}
 							</ul>
