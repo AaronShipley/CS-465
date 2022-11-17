@@ -11,4 +11,13 @@ const tripSchema = new mongoose.Schema({
     image: { type: String, required: true },
     description: { type: String, required: true }
 });
+
+//define meals schema
+const mealSchema = new mongoose.Schema({
+    type: { type: String, required: true, index: true },
+    image: { type: String, required: true },
+    description: { type: String, required: true }
+})
+
 module.exports = mongoose.model("trips", tripSchema);
+module.exports = mongoose.model("food", mealSchema);
