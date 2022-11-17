@@ -1,1 +1,2 @@
-# CS465-SNHU
+# CS465-Fullstack
+SNHU-School project
