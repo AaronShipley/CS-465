@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { trips } from '../data/trips';
+// import { trips } from '../data/trips';
 import { TripDataService } from '../services/trip-data.service';
 import { Trip } from '../models/trip';
 
@@ -10,27 +10,25 @@ import { Trip } from '../models/trip';
   providers: [TripDataService]
 })
 export class TripListingComponent implements OnInit {
-
-  //trips: Array<any> = trips;
+  // trips: Array<any> = trips;
   trips: Trip[];
-
   message: string;
 
   constructor(private tripDataService: TripDataService) { }
-
   private getTrips(): void {
     console.log('Inside TripListingComponent#getTrips');
     this.message = 'Searching for trips';
     this.tripDataService
       .getTrips()
-        .then(foundTrips => {
-          this.message = foundTrips.length > 0 ? '' : 'No trips found';
-          this.trips = foundTrips;
-        });
+      .then(foundTrips => {
+        this.message = foundTrips.length > 0 ? ''
+          : 'No trips found';
+        this.trips = foundTrips;
+      });
   }
-
+  
   ngOnInit(): void {
     this.getTrips();
   }
-
 }
+
