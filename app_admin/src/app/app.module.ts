@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { TripListingComponent } from './trip-listing/trip-listing.component';
 import { TripCardComponent } from './trip-card/trip-card.component';
-import { TripDataService } from 'services/trip-data.service';
+import { TripDataService } from 'src/app/services/trip-data.service';
 
 @NgModule({
   declarations: [
