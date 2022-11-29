@@ -63,7 +63,7 @@ const tripsUpdateTrip = async (req, res) => {
 };
 
 const tripsAddTrip = async (req, res) => {
-  Model.create(
+  Trip.create(
     {
       code: req.body.code,
       name: req.body.name,
