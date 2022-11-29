@@ -17,6 +17,7 @@ export class AddTripComponent implements OnInit {
     private router: Router,
     private tripService: TripDataService
   ) { }
+
   ngOnInit() {
     this.addForm = this.formBuilder.group({
       _id: [],
@@ -30,6 +31,7 @@ export class AddTripComponent implements OnInit {
       description: ['', Validators.required],
     })
   }
+  
   onSubmit() {
     this.submitted = true;
     if (this.addForm.valid) {
