@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Http}
 import { Http } from  '@angular/http';
 
-import {Trip} from '../../../models/trip';
+import {Trip} from 'models/trip';
 
 @Injectable()
 export class TripDataService {
