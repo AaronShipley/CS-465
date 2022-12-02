@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from "@angular/router";
+import {Router } from '@angular/core';
 import { TripDataService } from '../services/trip-data.service';
 
 @Component({
@@ -60,6 +60,8 @@ export class EditTripComponent implements OnInit {
         });
     }
   }
+  // get the form short name to access the form fields
+  get f() { return this.editForm.controls; }
 
 }
 
