@@ -1,6 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from "@angular/router";
-import { Trip } from '../models/trip';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-trip-card',
@@ -9,19 +7,9 @@ import { Trip } from '../models/trip';
 })
 export class TripCardComponent implements OnInit {
 
-  @Input('trip')trip; any;
-  constructor(
-    private router: Router
-  ) { }
+  constructor() { }
 
-  
-  ngOnInit(): void {
-  }
-
-  private editTrip(trip: Trip): void {
-    localStorage.removeItem("tripCode");
-    localStorage.setItem("tripCode", trip.code);
-    this.router.navigate(['edit-trip']);
+  ngOnInit() {
   }
 
 }
