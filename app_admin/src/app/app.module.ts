@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TripListingComponent } from './trip-listing/trip-listing.component';
 import { TripCardComponent } from './trip-card/trip-card.component';
+import { TripDataService } from './trip-data.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,12 @@ import { TripCardComponent } from './trip-card/trip-card.component';
     TripCardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    TripDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
