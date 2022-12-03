@@ -1,5 +1,4 @@
 export const trips =
-
 [
     {
         "code": "GALR210214",
@@ -21,7 +20,7 @@ export const trips =
         "image": "reef2.jpg",
         "description": "<p>At Dawson's... Integer magna leo, posuere et dignissim vitae, porttitor at odio. Pellentesque a metus nec magna placerat volutpat. Nunc nisi mi, elementum sit amet aliquet quis, tristique quis nisl. Curabitur odio lacus, blandit ut hendrerit </p> <p> vulputate, vulputate at est. Morbi aliquet viverra metus eu consectetur. In lorem dui, elementum sit amet convallis ac, tincidunt vel sapien. </p>"
     },
-     {
+    {
         "code": "CLAR210621",
         "name": "Claire's Reef",
         "length": "4 nights / 5 days",
@@ -29,6 +28,6 @@ export const trips =
         "resort": "Coral Sands, 5 stars",
         "perPerson": "1999.00",
         "image": "reef3.jpg",
-        "description": "<p>At Claire's... Donec sed felis risus. Nulla facilisi. Donec a orci tellus, et auctor odio. Fusce ac orci nibh, quis semper arcu. Cras orci neque, euismod et accumsan ac, sagittis molestie lorem. Proin odio sapien, elementum at tempor non. </p> <p> Vulputate eget libero. In hac habitasse platea dictumst. Integer purus justo, egestas eu consectetur eu, cursus in tortor. Quisque nec nunc ac mi ultrices iaculis. </p>"
+        "description": "<p> Donec sed felis risus. Nulla facilisi. Donec a orci tellus, et auctor odio. Fusce ac orci nibh, quis semper arcu. Cras orci neque, euismod et accumsan ac, sagittis molestie lorem. Proin odio sapien, elementum at tempor non. </p> <p> Vulputate eget libero. In hac habitasse platea dictumst. Integer purus justo, egestas eu consectetur eu, cursus in tortor. Quisque nec nunc ac mi ultrices iaculis. </p>"
     }
 ]
