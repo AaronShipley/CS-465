@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
     salt: String
 });
 
-userSchema.methods.setPassword = function(setPassword) {
+userSchema.methods.setPassword = function(password) {
     this.salt = crypto.randomBytes(16).toString('hex');
     this.hash = crypto.pbkdf2Sync(password, this.salt,
         1000, 64, 'sha512').toString('hex');
@@ -40,4 +40,4 @@ userSchema.methods.generateJwt = function() {
     }, process.env.JWT_SECRET);
 };
 
-module.exports = mongoose.model("users", userSchema);
+mongoose.model("users", userSchema);

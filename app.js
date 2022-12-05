@@ -62,7 +62,7 @@ app.use('/rooms', roomsRouter);
 app.use('/contact', contactRouter);
 app.use('/api', apiRouter);
 
-// catch 404 not authorized
+// catch 401 not authorized
 app.use((err, req, res, next) => {
   if (err.name === "UnauthorizedError") {
     res.status(401).json({ message: err.name + ": " + err.message });
