@@ -21,6 +21,7 @@ var newsRouter = require('./app_server/routes/news');
 var contactRouter = require('./app_server/routes/contact');
 var aboutRouter = require('./app_server/routes/about');
 var apiRouter = require('./app_api/routes/index');
+const { UnauthorizedError } = require('express-jwt');
 
 var app = express();
 
@@ -57,6 +58,15 @@ app.use('/about', aboutRouter);
 app.use('/rooms', roomsRouter);
 app.use('/contact', contactRouter);
 app.use('/api', apiRouter);
+
+// catch 404 not authorized
+app.use((err, req, res, next) => {
+  if (err.name === 'UnauthorizedError'){
+    res 
+      .status(401)
+      .json({"message": err.name + ": " + err.message});
+  }
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
