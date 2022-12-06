@@ -65,4 +65,4 @@ connect();
 
 // bring in the mongoose schema
 require('./models/travlr');
-Require("./models/user");
+require("./models/user");
