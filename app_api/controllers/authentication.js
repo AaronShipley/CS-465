@@ -56,4 +56,4 @@ passport.authenticate('local', (err, user, info) => {
 module.exports = {
     register,
     login
-};    
+};

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { TripDataService } from '../services/trip-data.service';
-import { Trip } from 'models/trip';
+import { Trip } from '../models/trip';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 
@@ -12,6 +12,8 @@ import { connectableObservableDescriptor } from 'rxjs/internal/observable/Connec
   styleUrls: ['./delete-trip.component.css']
 })
 export class DeleteTripComponent implements OnInit {
+
+  submitted = false;
 
   constructor(
     private router: Router,
@@ -31,8 +33,12 @@ export class DeleteTripComponent implements OnInit {
     this.tripService.deleteTrip(tripCode)
       .then( data => {
         console.log(data);
-        this.router.navigate(['list-trips']);
+        this.router.navigate(['']);
       });
+  }
+  ngOnSubmit(){
+    this.submitted = true;
+    return this.tripService.deleteTrip;
   }
 
 }

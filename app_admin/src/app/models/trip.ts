@@ -9,4 +9,3 @@ export interface Trip {
     image: string,
     description: string
 }
-   

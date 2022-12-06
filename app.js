@@ -6,21 +6,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const hbs = require('hbs');
-const passport = require('passport');
-var users = require('./app_server/database/models/user')
+const passport = require("passport");
 
-require('./app_server/database/db');
+require('./app_api/database/db');
 
 require('./app_api/config/passport');
 
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
 var travelRouter = require('./app_server/routes/travel');
-var aboutRouter = require('./app_server/routes/about');
 var roomsRouter = require('./app_server/routes/rooms');
-var contactRouter = require('./app_server/routes/contact');
 var mealsRouter = require('./app_server/routes/meals');
 var newsRouter = require('./app_server/routes/news');
+var contactRouter = require('./app_server/routes/contact');
+var aboutRouter = require('./app_server/routes/about');
 var apiRouter = require('./app_api/routes/index');
 
 
@@ -29,7 +28,8 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 
-hbs.registerPartials(path.join(__dirname, 'app_server', 'views/partials'))
+    // register handlebars partials (https://www.npmjs.com/package/hbs)
+    hbs.registerPartials(path.join(__dirname, 'app_server', 'views/partials'))
 
 app.set('view engine', 'hbs');
 
@@ -48,35 +48,28 @@ app.use('/api', (req, res, next) => {
   next();
 });
 
-app.use('/', indexRouter);
+app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 app.use('/travel', travelRouter);
+app.use('/meals', mealsRouter);
+app.use('/news', newsRouter);
 app.use('/about', aboutRouter);
 app.use('/rooms', roomsRouter);
 app.use('/contact', contactRouter);
-app.use('/meals', mealsRouter);
-app.use('/news', newsRouter);
 app.use('/api', apiRouter);
 
-
-
-
-
-
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-
-// catch unauthorized error and create 401
+// catch 401 not authorized
 app.use((err, req, res, next) => {
   if (err.name === 'UnauthorizedError') {
     res
       .status(401)
       .json({"message": err.name + ": " + err.message});
   }
+});
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
 });
 
 // error handler
