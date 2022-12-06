@@ -6,7 +6,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const hbs = require('hbs');
-const passport = require("passport");
+const passport = require('passport');
 
 require('./app_api/database/db');
 
