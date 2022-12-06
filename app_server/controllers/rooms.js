@@ -1,9 +1,11 @@
-const fs = require('fs');
-const beds = JSON.parse(fs.readFileSync('./data/beds.json','utf8'));
+const fs = require('fs')
 
 const rooms = (req, res) => {
-    res.render('rooms', {title: 'Rooms', beds});
-};
+    pageTitle = 'Travlr Getaways - Rooms';
+    res.render('rooms', {title: pageTitle});
+
+}
+
 module.exports = {
     rooms
-};
+}

@@ -1,6 +1,10 @@
+const fs = require('fs')
+
 const contact = (req, res) => {
-    res.render('contact', {title: 'Contact'});
+    pageTitle = 'Travlr Getaways - Contact';
+    res.render('contact', {title: pageTitle})
 };
+
 module.exports = {
     contact
-};
+}
