@@ -19,9 +19,6 @@ router
     .route('/register')
     .post(authController.register);
 
-router
-    .route('/user')
-    .get(tripsController.getUser);
 
 router
     .route('/trips')
