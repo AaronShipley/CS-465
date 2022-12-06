@@ -13,6 +13,8 @@ import { connectableObservableDescriptor } from 'rxjs/internal/observable/Connec
 })
 export class DeleteTripComponent implements OnInit {
 
+  submitted = false;
+
   constructor(
     private router: Router,
     private tripService: TripDataService
@@ -33,6 +35,10 @@ export class DeleteTripComponent implements OnInit {
         console.log(data);
         this.router.navigate(['']);
       });
+  }
+  ngOnSubmit(){
+    this.submitted = true;
+    return this.tripService.deleteTrip;
   }
 
 }
