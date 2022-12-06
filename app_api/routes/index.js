@@ -11,12 +11,12 @@ router.route("/register").post(authController.register);
 router
   .route("/trips")
   .get(tripsController.tripsList)
-  .post(auth, tripsController.tripsAddTrip);
+  .post(tripsController.tripsAddTrip);
 
 router
   .route("/trips/:tripCode")
   .get(tripsController.tripsList)
-  .put(auth, tripsController.tripsUpdateTrip);
+  .put(tripsController.tripsUpdateTrip);
 
 router.route("/trips/:tripCode").get(tripsController.tripsFindCode);
 
