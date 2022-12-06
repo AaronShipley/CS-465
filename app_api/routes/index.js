@@ -1,18 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const {expressjwt: jwt} = require('express-jwt');
 
-const authController = require('../controllers/authentication')
 const tripsController = require('../controllers/trips');
-
-router
-    .route('/login')
-    .post(authController.login);
-
-router
-    .route('/register')
-    .post(authController.register);
-
 
 router
     .route('/trips')
@@ -20,13 +9,8 @@ router
     .post(tripsController.tripsAddTrip);
 
 router
-    .route('/trip/:tripCode')
+    .route('/trips/:tripCode')
     .get(tripsController.tripsFindCode)
-    .put(tripsController.tripsUpdateTrip)
-    
-
-router
-    .route("/trips/:tripCode")
-    .get(tripsController.tripsFindCode);
+    .put(tripsController.tripsUpdateTrip);
 
 module.exports = router;
