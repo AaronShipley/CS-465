@@ -16,12 +16,12 @@ router
 
 router
     .route('/trips')
-    .get(tripsController.getAllTrips)
+    .get(tripsController.tripsList)
     .post(tripsController.tripsAddTrip);
 
 router
     .route('/trip/:tripCode')
-    .get(tripsController.getTripByCode)
+    .get(tripsController.tripsFindCode)
     .put(tripsController.tripsUpdateTrip)
     
 
