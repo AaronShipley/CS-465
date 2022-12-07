@@ -28,9 +28,10 @@ const tripsFindCode = async (req, res) => {
 };
 
 const tripsAddTrip = async (req, res) => {
+  console.log('tripsAddTrip invoked with: \n' + req.body);
   getUser(req, res, (req, res) => {
-    Trip.create(
-      {
+    Trip
+      .create({
         code: req.body.code,
         name: req.body.name,
         length: req.body.length,
@@ -50,10 +51,10 @@ const tripsAddTrip = async (req, res) => {
             .status(201) //creates
             .json(trip);
         }
-      }
-    );
-  });
-};
+      });
+  }
+  )
+}
 
 const tripsUpdateTrip = async (req, res) => {
   console.log(req.body);
