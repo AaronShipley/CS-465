@@ -3,7 +3,7 @@ const router = express.Router();
 
 const tripsController = require('../controllers/trips');
 const authController = require('../controllers/authentication');
-const jwt = require('express-jwt');
+var { expressjwt: jwt } = require("express-jwt");
 
 const auth  = jwt({
     secret: process.env.JWT_SECRET,
