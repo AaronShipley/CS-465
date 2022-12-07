@@ -143,4 +143,5 @@ module.exports = {
   tripsFindCode,
   tripsAddTrip,
   tripsUpdateTrip,
+  getUser,
 };
