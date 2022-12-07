@@ -28,7 +28,7 @@ const tripsFindCode = async (req, res) => {
 };
 
 const tripsAddTrip = async (req, res) => {
-  const getUser = (req, res, (req, res) => {
+  getUser(req, res, (req, res) => {
     Trip.create(
       {
         code: req.body.code,
@@ -99,5 +99,4 @@ module.exports = {
   tripsFindCode,
   tripsAddTrip,
   tripsUpdateTrip,
-  getUser,
 };
