@@ -2,7 +2,7 @@
     {
         "link": "/meals",
         "heading": "The SeaFood Special",
-        "image": "images/seafoods.jpg",
+        "image": "seafoods.jpg",
         "height": "169",
         "width": "780",
         "hoverName": "Fried Salmon Special",
@@ -11,7 +11,7 @@
     {
         "link": "/meals",
         "heading": "Yummy Desserts",
-        "image": "images/desserts.jpg",
+        "image": "desserts.jpg",
         "height": "169",
         "width": "780",
         "hoverName": "Choco Ice Cream Sandwich",
@@ -20,7 +20,7 @@
     {
         "link": "/meals",
         "heading": "The Buffet",
-        "image": "images/buffet.jpg",
+        "image": "buffet.jpg",
         "height": "169",
         "width": "780",
         "hoverName": "Mixed Buffet",
