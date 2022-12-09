@@ -14,7 +14,7 @@ require('./app_api/models/db');
 require('./app_api/config/passport');
 
 // set up routers
-var indexRouter = require('./app_server/routes/index_router');
+var indexRouter = require('./app_server/routes//meals');
 var usersRouter = require('./app_server/routes/users');
 var travelRouter = require('./app_server/routes/travel_router');
 var aboutRouter = require('./app_server/routes/about_router');
