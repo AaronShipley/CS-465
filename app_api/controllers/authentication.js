@@ -12,13 +12,16 @@ const register = (req, res) => {
     user.name = req.body.name;
     user.email = req.body.email;
     user.setPassword(req.body.password);
-    console.log(user.name + user.email + user.setPassword);
+    
     user.save((err) => {
         if (err) {
             res
                 .status(400)
                 .json(err);
         } else {
+            console.log(user.name);
+            console.log(user.email);
+            console.log(user.setPassword);
             const token = user.generateJwt();
             res
                 .status(200)
