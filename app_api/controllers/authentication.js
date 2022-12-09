@@ -12,16 +12,12 @@ const register = (req, res) => {
     user.name = req.body.name;
     user.email = req.body.email;
     user.setPassword(req.body.password);
-    
     user.save((err) => {
         if (err) {
             res
                 .status(400)
                 .json(err);
         } else {
-            console.log(user.name);
-            console.log(user.email);
-            console.log(user.password);
             const token = user.generateJwt();
             res
                 .status(200)
@@ -43,11 +39,7 @@ const login = (req, res) => {
                 .json(err);
         }
         if (user) {
-            
             const token = user.generateJwt();
-            console.log(user.name);
-            console.log(user.email);
-            console.log(user.password);
             res
                 .status(200)
                 .json({token});

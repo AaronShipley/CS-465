@@ -138,7 +138,7 @@ const getUser = (req, res, callback) => {
         } else {
             return res
                 .status(404)
-                .json({ "message": "User email not found" });
+                .json({ "message": "User not found" });
         
     }
 };
