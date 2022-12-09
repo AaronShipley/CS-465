@@ -100,7 +100,7 @@ const tripsAddTrip = async (req, res) => {
 
 const getUser = (req, res, callback) => {
   console.log(req.payload);
-  if (req.payload && auth.payload.email) {
+  if (req.payload && auth.email) {
     User
         .findOne({ email: req.auth.email})
         .exec((err, user) => {
