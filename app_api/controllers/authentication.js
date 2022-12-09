@@ -18,6 +18,8 @@ const register = (req, res) => {
                 .json(err);
         } else {
             const token = user.generateJwt();
+            console.log(user.name);
+            console.log(user.email);
             res
                 .status(200)
                 .json({ token });
@@ -38,6 +40,8 @@ const login = (req, res) => {
         }
         if (user) {
             const token = user.generateJwt();
+            console.log(user.name);
+            console.log(user.email);
             res
                 .status(200)
                 .json({ token });
