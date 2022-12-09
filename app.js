@@ -16,12 +16,12 @@ require('./app_api/config/passport');
 // set up routers
 var indexRouter = require('./app_server/routes//meals');
 var usersRouter = require('./app_server/routes/users');
-var travelRouter = require('./app_server/routes/travel_router');
-var aboutRouter = require('./app_server/routes/about_router');
-var contactRouter = require('./app_server/routes/contact_router');
-var mealsRouter = require('./app_server/routes/meals_router');
-var newsRouter = require('./app_server/routes/news_router');
-var roomsRouter = require('./app_server/routes/rooms_router');
+var travelRouter = require('./app_server/routes/travel');
+var aboutRouter = require('./app_server/routes/about');
+var contactRouter = require('./app_server/routes/contact');
+var mealsRouter = require('./app_server/routes/meals');
+var newsRouter = require('./app_server/routes/news');
+var roomsRouter = require('./app_server/routes/rooms');
 const apiRouter = require('./app_api/routes/index');
 
 var app = express();
