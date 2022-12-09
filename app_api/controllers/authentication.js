@@ -21,7 +21,7 @@ const register = (req, res) => {
         } else {
             console.log(user.name);
             console.log(user.email);
-            console.log(user.setPassword);
+            console.log(user.password);
             const token = user.generateJwt();
             res
                 .status(200)
@@ -43,6 +43,9 @@ const login = (req, res) => {
                 .json(err);
         }
         if (user) {
+            console.log(user.name);
+            console.log(user.email);
+            console.log(user.password);
             const token = user.generateJwt();
             res
                 .status(200)
