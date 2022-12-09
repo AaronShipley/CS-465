@@ -12,6 +12,7 @@ const register = (req, res) => {
     user.name = req.body.name;
     user.email = req.body.email;
     user.setPassword(req.body.password);
+    console.log(user.name + user.email + user.setPassword);
     user.save((err) => {
         if (err) {
             res
