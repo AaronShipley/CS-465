@@ -29,6 +29,7 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
+    "@angular/cli": "^15.0.3",
     "hbs": "^4.2.0",
     "seedgoose": "^2.0.2"
   }
