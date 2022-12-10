@@ -8,8 +8,8 @@ var logger = require('morgan');
 const hbs = require('hbs');
 const passport = require('passport');
 
-require('./app_api/config/passport');
 require('./app_api/database/db');
+require('./app_api/config/passport');
 
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
