@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Http } from '@angular/http';
 import { User } from '../models/user';
 import { AuthResponse } from '../models/authresponse';
-import { BROWSER_STORAGE } from '../models/storage';
+import { BROWSER_STORAGE } from '../../../storage';
 import { Trip } from '../models/trip';
 import { response } from 'express';
 
