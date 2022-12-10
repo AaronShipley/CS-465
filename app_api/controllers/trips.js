@@ -97,8 +97,8 @@ const tripsAddTrip = async (req, res) => {
 }
 
 const getUser = (req, res, callback) => {
-  console.log(req.name);
-  console.log(req.email)
+  console.log(req.auth.name);
+  console.log(req.auth.email)
   if (req.auth && req.auth.email) {
     User
         .findOne({ email: req.auth.email})
