@@ -22,6 +22,10 @@ export class TripListingComponent implements OnInit {
   constructor(private tripDataService: TripDataService, private router: Router,
     private authenticationService: AuthenticationService) { }
 
+    public isLoggedIn(): boolean {
+      return this.authenticationService.isLoggedIn();
+     }
+
   private addTrip(): void {
     console.log('Inside TripListingComponent#addTrip');
     this.router.navigate(['add-trip']);
@@ -42,8 +46,6 @@ export class TripListingComponent implements OnInit {
     this.getTrips();
   }
 
-  public isLoggedIn(): boolean {
-    return this.authenticationService.isLoggedIn();
-   }
+  
    
 }
