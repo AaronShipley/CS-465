@@ -1,13 +1,12 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+
 import { Trip } from '../models/trip';
-import { response } from 'express';
 
 @Injectable()
 export class TripDataService {
 
   constructor(private http: Http) { }
-    
 
   private apiBaseUrl = 'http://localhost:3000/api/';
   private tripUrl = `${this.apiBaseUrl}trips/`;
@@ -53,7 +52,5 @@ export class TripDataService {
     console.error("Something has gone wrong", error);
     return Promise.reject(error.message || error);
   }
-
-  
   
 }

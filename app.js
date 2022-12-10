@@ -11,7 +11,6 @@ const passport = require('passport');
 require('./app_api/database/db');
 require('./app_api/config/passport');
 
-
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
 var travelRouter = require('./app_server/routes/travel');
@@ -58,12 +57,12 @@ app.use('/rooms', roomsRouter);
 app.use('/contact', contactRouter);
 app.use('/api', apiRouter);
 
-
+// catch unauthorized error and create 401
 app.use((err, req, res, next) => {
   if(err.name === 'UnauthorizedError') {
     res
       .status(401)
-      .json({"message": err.name +": " + err.message});
+      .json({"message": err.name + ": " + err.message});
   }
 });
 
