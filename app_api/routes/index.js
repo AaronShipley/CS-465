@@ -15,7 +15,7 @@ router
     .put(tripsController.tripsUpdateTrip);
 
 router
-    .route('/loging')
+    .route('/login')
     .post(authController.login);
 
 router
