@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const tripsController = require('../controllers/trips');
+const authController = require('../controllers/authentication');
 
 router
     .route('/trips')
@@ -12,5 +13,13 @@ router
     .route('/trips/:tripCode')
     .get(tripsController.tripsFindCode)
     .put(tripsController.tripsUpdateTrip);
+
+router
+    .route('/loging')
+    .post(authController.login);
+
+router
+    .route('/register')
+    .post(authController.register);
 
 module.exports = router;
