@@ -4,7 +4,7 @@ import { User } from '../models/user';
 import { AuthResponse } from '../models/authresponse';
 import { BROWSER_STORAGE } from '../models/storage';
 import { Trip } from '../models/trip';
-import { Response } from 'express';
+import { response } from 'express';
 
 @Injectable()
 export class TripDataService {
