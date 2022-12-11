@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { TripDataService } from "../services/trip-data.service";
 
-
 @Component({
   selector: "app-edit-trip",
   templateUrl: "./edit-trip.component.html",
