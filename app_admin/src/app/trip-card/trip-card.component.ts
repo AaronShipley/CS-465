@@ -20,10 +20,6 @@ export class TripCardComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  public isLoggedIn(): boolean {
-    return this.authenticationService.isLoggedIn();
-   }
    
   private editTrip(trip: Trip): void {
     console.log('Inside TripListingComponent#editTrip');
@@ -31,4 +27,8 @@ export class TripCardComponent implements OnInit {
     localStorage.setItem("tripCode", trip.code);
     this.router.navigate(['edit-trip']);
   }
+
+  public isLoggedIn(): boolean {
+    return this.authenticationService.isLoggedIn();
+   }
 }
