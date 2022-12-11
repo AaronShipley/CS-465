@@ -30,7 +30,7 @@ export class AuthenticationService {
   public logout(): void {
     this.storage.removeItem('travlr-token');
   }
-  public isLoggedIn(): boolean {
+  public isLoggedIn(): boolean  {
     const token: string = this.getToken();
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1]));
@@ -39,6 +39,7 @@ export class AuthenticationService {
       return false;
     }
   }
+  
   public getCurrentUser(): User {
     if (this.isLoggedIn()) {
       const token: string = this.getToken();
