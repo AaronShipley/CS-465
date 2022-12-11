@@ -29,6 +29,6 @@ router
     .route('/trips/:tripCode')
     .get(tripsController.tripsFindCode)
     .put(auth, tripsController.tripsUpdateTrip)
-    .delete(auth, tripsController.tripsDeleteTrip);
+    .delete(auth, tripsController.);
 
 module.exports = router;
