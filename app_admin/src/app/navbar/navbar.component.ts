@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from 'express';
 import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { AuthenticationService } from '../services/authentication.service';
 
 export class NavbarComponent implements OnInit {
   constructor(
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private router: Router
   ) { }
   
   ngOnInit() { }
