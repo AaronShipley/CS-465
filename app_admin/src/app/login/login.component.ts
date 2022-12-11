@@ -26,11 +26,12 @@ export class LoginComponent implements OnInit {
       this.formError = 'All fields are required, please try again';
     } else {
       this.doLogin();
+      
     }
   }
   private doLogin(): void {
     this.authenticationService.login(this.credentials)
-      .then(() => this.router.navigateByUrl('#'))
+      .then(() => this.router.navigate(['list-trips']))
       .catch((message) => this.formError = message);
   }
 }
