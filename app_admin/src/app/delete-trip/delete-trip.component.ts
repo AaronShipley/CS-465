@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../services/authentication';
-import { TripDataService } from "../services/trip-data.service";
+import { Router } from "@angular/router";
+import { TripDataService } from '../services/trip-data.service';
+import { Trip } from '../models/trip';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+
+
 
 @Component({
   selector: 'app-delete-trip',
@@ -10,16 +14,18 @@ import { TripDataService } from "../services/trip-data.service";
 export class DeleteTripComponent implements OnInit {
 
   constructor(
-    private authService: AuthenticationService
+    private router: Router,
+    private tripService: TripDataService
   ) { }
 
   ngOnInit() {
-  }
-  public isLoggedIn(): boolean {
-    return this.authService.isLoggedIn();
-  }
-
-  ngOnClick() {
-    
+    let tripCode = localStorage.getItem("tripCode");
+    if (!tripCode) {
+      alert("Something wrong, couldn't find where I stashed the tripCode!");
+      this.router.navigate(['']);
+      return;
+    }
+    this.tripService.deleteTrip;
+    this.router.navigate(['']);
   }
 }
