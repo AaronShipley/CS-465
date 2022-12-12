@@ -60,18 +60,20 @@ export class TripDataService {
       .catch(this.handleError);
   }
 
-  public deleteTrip(tripCode: string) : Promise<Trip> {
-    console.log("Inside TripsDataService#deleteTrip");
-    const headers = new Headers ({
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("travlr-token")}`,
-    });
+  public deleteTrip(tripCode: string): Promise<Trip> {
+    console.log('Inside TripDataService#deleteTrip(tripCode)');
+    const httpOptions = {
+      headers: new Headers({
+      'Authorization': `Bearer ${this.storage.getItem('travlr-token')}` })
+      };
     return this.http
-    .delete(this.tripUrl + tripCode)    // This was key to connection to database
-    .toPromise()
-    .then((response) => response.json() as Trip[])
-    .catch(this.handleError);
+      .delete(this.tripUrl + tripCode, httpOptions)    // This was key to connection to database
+      .toPromise()
+      .then((response) => response.json() as Trip[])
+      .catch(this.handleError);
   }
+
+
   
 
   private handleError(error: any): Promise<any> {
