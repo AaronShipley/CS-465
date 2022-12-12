@@ -61,15 +61,11 @@ export class TripDataService {
   }
 
   public deleteTrip(tripCode: string): Promise<Trip> {
-    console.log('Inside TripDataService#deleteTrip(tripCode)');
-    const httpOptions = {
-      headers: new Headers({
-      'Authorization': `Bearer ${this.storage.getItem('travlr-token')}` })
-      };
+    console.log("Inside TripDataService#getdTrip");
     return this.http
-      .delete(this.tripUrl + tripCode, httpOptions)    // This was key to connection to database
+      .delete(this.tripUrl + tripCode)
       .toPromise()
-      .then((response) => response.json() as Trip[])
+      .then((response) => response.json() as Trip)
       .catch(this.handleError);
   }
 
